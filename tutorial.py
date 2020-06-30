@@ -8,10 +8,10 @@ import os
 
 
 def twitterAPI():
-    consumer_key = 'h6qdP9AktNsUXa5VhoAEz55xj'
-    consumer_secret = '9gtC2lHDCQ9w3uinsJLK3VynvEVWaDreah4cTF1nRXAMV37dQE'
-    access_token = '1231702850071228416-7f7ZO3FF0Yt4lm9CE5OwPaH7CSmwPS'
-    access_secret = 'TjC6BvR7vjwwHqfHNSZoo7w4PG4PkpNkzrp8cntNep13C'
+    consumer_key = os.environ.get('CONSUMER_KEY')
+    consumer_secret = os.environ.get('CONSUMER_SECRET')
+    access_token = os.environ.get('ACCESS_TOKEN')
+    access_secret = os.environ.get('ACCESS_SECRET')
 
     auth = tp.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_secret)
@@ -53,7 +53,7 @@ def make_tweet():
         file_name = "art-" + str(count) + ".jpg"
         print("Tweeting: " + file_name)
         api.update_with_media(file_name, "test")
-        time.sleep(60)
+        time.sleep(600)
         count += 1
         if count == maxI:
             pass
