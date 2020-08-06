@@ -19,7 +19,7 @@ def twitterAPI():
     return api
 
 api = twitterAPI()
-url = "https://www.tumblr.com/search/impressionism"
+url = "https://www.tumblr.com/search/marble+statues"
 page = requests.get(url)
 soup = bs(page.text, 'html.parser')
 
@@ -31,7 +31,8 @@ image_tags = soup.find_all('img')
 """count = 3
 maxI = 39"""
 
-"""def get_images():
+def get_images():
+    x = 0
     for image in image_tags:
         try:
             url = image['src']
@@ -45,7 +46,7 @@ maxI = 39"""
                     x += 1
         except:
             pass
-"""
+
 def make_tweet():
     count = 0
     maxI = 39
@@ -58,7 +59,5 @@ def make_tweet():
         if count == maxI:
             pass
 
-"""file_name = "art-" + str(1) + ".jpg"
-api.update_with_media(file_name, "test")"""
-
-make_tweet()
+#make_tweet()
+get_images()
