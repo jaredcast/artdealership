@@ -59,5 +59,5 @@ def make_tweet():
         if count == maxI:
             pass
 
-#make_tweet()
-get_images()
+make_tweet()
+#get_images()
